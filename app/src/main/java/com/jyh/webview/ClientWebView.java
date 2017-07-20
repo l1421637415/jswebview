@@ -35,7 +35,7 @@ public class ClientWebView extends WebView{
 
     private void registDefJsBridges(){
         JsBridgeEngine.INSTANCE.bindWebView(this);
-        registJsBridge(new HardwareInfo());
+        registJsBridge(new HardwareInfo(getContext()));
     }
 
     private void defulInitSettings(){
