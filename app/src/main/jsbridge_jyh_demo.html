@@ -31,7 +31,12 @@
         baseUrl : "jsbridge://jyh.jc/",
         callNative : function (bridgeUri,callBack) {
             var cid = uuid();
-            uri = this.baseUrl+bridgeUri+"&callBackId="+cid;
+            var uri = "";
+            if(bridgeUri.indexOf("?") >= 0){
+                uri = this.baseUrl+bridgeUri+"&callBackId="+cid;
+            }else{
+                uri = this.baseUrl+bridgeUri+"?callBackId="+cid;
+            }
             window.prompt(uri, "");
             if(callBack != null){
                 callBackIds[cid] = callBack;
