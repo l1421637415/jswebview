@@ -37,7 +37,7 @@ public enum  JsBridgeEngine {
             for(Method method : obj.getMethods()){
                 if(method.isAnnotationPresent(BridgeMethod.class)){
                     BridgeMethod bridgeMethod = method.getAnnotation(BridgeMethod.class);
-                    String funName = bridgeMethod.fun();
+                    String funName = bridgeMethod.value();
                     bridgeMethodMap.put(funName,method);
                 }
             }

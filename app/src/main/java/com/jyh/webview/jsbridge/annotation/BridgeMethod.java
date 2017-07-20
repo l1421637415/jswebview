@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Documented
 public @interface BridgeMethod {
 
-    String fun() default "";
+    String value() default "";
 }
